@@ -1,9 +1,8 @@
 package it.polito.tdp.alien;
 
 import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.StringTokenizer;
 
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,7 +14,6 @@ public class FXMLController {
 	private String parolaAliena;
 	private String traduzione;
 	private AlienDictionary dizionario1;
-	
 
     @FXML
     private ResourceBundle resources;
@@ -56,7 +54,6 @@ public class FXMLController {
     void doTranslate(ActionEvent event) {
     	this.parolaInserita=txtParola.getText().toLowerCase();
  
-    	
     	if (parolaInserita.length()==0) {
     		txtResult.clear();
     		txtResult.setText("Inserire una parola \n");
@@ -105,8 +102,8 @@ public class FXMLController {
     	}
     else {
     		traduzione= dizionario1.translateWord(parolaInserita);
-    		if (traduzione!=null) {
-    		txtResult.setText(traduzione+"\n");
+    		if(traduzione!=null) {
+    		txtResult.setText(traduzione);
     		txtParola.clear();
     		}
     		else {
